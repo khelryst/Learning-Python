@@ -1,18 +1,20 @@
 print('Welcome! I will add numbers you give me until you type "done."')
 
-count = []
-x = []
+numlist = list()    #create list
 
 while True:
-    count = input('Enter a number: ')
-    if count == 'done':
-        break
+    inp = input('Enter a number: ')
+    if inp == 'done': break     #stop loop
     try:
-        float(count)
+        inp = float(inp)            
     except:
-        count = input('Please enter a number: ')
-    for x in count:
-        count = count + x
-    
+        inp = input('Please enter a number: ')
+    numlist.append(inp)         #add number to list
 
-print('All of your numbers added: ' + count)
+added = sum(numlist)            #sum of list
+maximum = max(numlist)
+minimum = min(numlist)
+
+print('All of your numbers added: ' + str(added))
+print('Maximum: ' + str(maximum))
+print('Minimum: ' + str(minimum))
